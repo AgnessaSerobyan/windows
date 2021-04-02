@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'></script>
+
+  </head>
+  <body>
+    <div>
+
+      <span id="V">В</span>
+      <span id="Y">Ы</span>
+      <span id="R">Р</span>
+      <span id="U">У</span>
+      <span id="G">Б</span>
+      <span id="I">И</span>
+      <span id="blin">Ш</span>
+      <span id="C">C</span>
+    	<span id="B">B</span>
+    	<span id="E">E</span>
+    	<span id="T">T</span>
+
+
+  <br><br>
+  <button class="nudesedtab">Включить/Выключить</button>
+  <div id='tasetupo-kedgaben'></div>
+
+
+  <div class="x">
+
+  <img src="images/x.png" alt="x" id="ShowPopUp" class="x"/>
+</div>
+
+
+    	<!-- <span id="T">T</span> -->
+
+
+
+    <style>
+    .nudesedtab {
+    /* font-size: 11px!important; */
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 500px ;
+    /* margin: 0 0 1px;
+    border: none;
+    font-weight: normal!important;
+    cursor: pointer;
+    background: #0c70b5;
+    text-transform: uppercase;
+    color: #e8e5e5;
+    width: auto !important;
+    border-radius: 3px; */
+    opacity: 0;
+}
+
+
+
+    :root {
+	--white:#f1f1f1
+}
+body {
+	margin: 0;
+	font-family: Montserrat;
+	font-size: 40px;
+	color: var(--white);
+	letter-spacing: 0.7em;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+div > span {
+	opacity: 0.15;
+}
+
+#blin {
+  opacity: 0;
+}
+#B {
+	opacity: 1;
+	animation: flickerI 2s linear  reverse infinite;
+}
+#B::after {
+	content: '';
+	width: 150%;
+	-webkit-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+	-moz-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+	box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+}
+#C, #E, #U, #I {
+	animation: flickerLG 2s linear reverse infinite;
+	position: relative;
+}
+#C::after,
+#C::before  {
+	content:' ';
+	width: 100px;
+	height: 100px;
+	background: var(--white);
+	position: absolute;
+	top: -50%;
+	left: 100%;
+	border-radius: 100%;
+	opacity: 0.05;
+	filter: blur(10px);
+}
+#C::after {
+	width: 200px;
+	height: 200px;
+	top: -150%;
+	left: -5%;
+	opacity: 0.1;
+	filter: blur(10px);
+}
+
+#U::after,
+#U::before  {
+	content:' ';
+	width: 100px;
+	height: 100px;
+	background: var(--white);
+	position: absolute;
+	top: -50%;
+	left: 100%;
+	border-radius: 100%;
+	opacity: 0.05;
+	filter: blur(10px);
+}
+#U::after {
+	width: 200px;
+	height: 200px;
+	top: -150%;
+	left: -5%;
+	opacity: 0.1;
+	filter: blur(10px);
+}
+
+#V, #R {
+	animation: flickerLG 2s linear reverse infinite;
+	position: relative;
+}
+#V::after,
+#V::before  {
+	content:' ';
+	width: 100px;
+	height: 100px;
+	background: var(--white);
+	position: absolute;
+	top: -50%;
+	left: 100%;
+	border-radius: 100%;
+	opacity: 0.05;
+	filter: blur(10px);
+}
+#Y::after {
+	width: 200px;
+	height: 200px;
+	top: -150%;
+	left: -5%;
+	opacity: 0.1;
+	filter: blur(10px);
+}
+#I {
+	animation: flickerH 2s linear reverse infinite
+}
+
+#I {
+	animation: flickerH 2s linear reverse infinite
+}
+
+
+#G {
+	animation: flickerH 2s linear reverse infinite
+}
+
+#G {
+	animation: flickerH 2s linear reverse infinite
+}
+
+@keyframes flickerI {
+	0% {
+		opacity: 0.4;
+	}
+	5% {
+		opacity: 0.5;
+	}
+	10% {
+		opacity: 0.6;
+	}
+	15% {
+		opacity: 0.85;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	30% {
+		opacity: 1;
+	}
+	35% {
+		opacity: 0.1;
+	}
+	40% {
+		opacity: 0.25;
+	}
+	45% {
+		opacity: 0.5;
+	}
+	60% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0.85;
+	}
+	80% {
+		opacity: 0.4;
+	}
+	90% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes flickerLG {
+	0% {
+		opacity: 0.19;
+	}
+	5% {
+		opacity: 0.2;
+	}
+	10% {
+		opacity: 0.25;
+	}
+	15% {
+		opacity: 0.35;
+	}
+	25% {
+		opacity: 0.2;
+	}
+	30% {
+		opacity: 0.4;
+	}
+	35% {
+		opacity: 0.1;
+	}
+	40% {
+		opacity: 0.25;
+	}
+	45% {
+		opacity: 0.2;
+	}
+	60% {
+		opacity: 0.4;
+	}
+	70% {
+		opacity: 0.35;
+	}
+	80% {
+		opacity: 0.4;
+	}
+	90% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 0.4;
+	}
+}
+
+@keyframes flickerH {
+	0% {
+		opacity: 0.15;
+	}
+	5% {
+		opacity: 0.2;
+	}
+	10% {
+		opacity: 0.12;
+	}
+	15% {
+		opacity: 0.2;
+	}
+	25% {
+		opacity: 0.15;
+	}
+	30% {
+		opacity: 0.4;
+	}
+	35% {
+		opacity: 0.05;
+	}
+	40% {
+		opacity: 0.12;
+	}
+	45% {
+		opacity: 0.15;
+	}
+	60% {
+		opacity: 0.3;
+	}
+	70% {
+		opacity: 0.2;
+	}
+	80% {
+		opacity: 0.3;
+	}
+	90% {
+		opacity: 0.18;
+	}
+	100% {
+		opacity: 0.3;
+	}
+}
+
+@keyframes flickerT {
+	0% {
+		opacity: 0.01;
+	}
+	5% {
+		opacity: 0.05;
+	}
+	10% {
+		opacity: 0.03;
+	}
+	15% {
+		opacity: 0.1;
+	}
+	25% {
+		opacity: 0.07;
+	}
+	30% {
+		opacity: 0.1;
+	}
+	35% {
+		opacity: 0.05;
+	}
+	40% {
+		opacity: 0.06;
+	}
+	45% {
+		opacity: 0.1;
+	}
+	60% {
+		opacity: 0.;
+	}
+	70% {
+		opacity: 0.1;
+	}
+	80% {
+		opacity: 0.;
+	}
+	90% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 0.1;
+	}
+}
+
+.x{
+  position: relative;
+width: 60;
+height: 60px;
+left: 509px;
+top: -153px;
+z-index: 10000;
+}
+
+    </style>
+
+
+
+
+<script>
+var per = 0;
+$(document).ready(function(){
+  $("#tasetupo-kedgaben").css("height", $(document).height()).hide();
+  $(document).click(function(e) {
+	if(!$(e.target).hasClass('nudesedtab') && per == 1) {
+	  $("#tasetupo-kedgaben").toggle();
+	  per = 0;
+	}
+  });
+  $(".nudesedtab").click(function(){
+    $("#tasetupo-kedgaben").toggle();
+	per += 1;
+    if (per == 2) {
+	  per = 0;
+	}
+  });
+});
+
+ </script>
+
+ <script>
+
+   $(function () {
+   $("#ShowPopUp").click(function () {
+   window.open('window.html');
+   });
+   });
+   </script>
+
+  </body>
+</html>

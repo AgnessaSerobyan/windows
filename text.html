@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <style>
+  #typewriter {
+    position: relative;
+    left: 105px;
+    top: -120px;
+
+    font-family: FE Blud;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 90px;
+    line-height: 165px;
+
+    color: #AA0000;
+
+  }
+
+  .x1{
+    position: relative;
+    height: auto;
+    width: auto;
+    left: 532px;
+    top: 4px;
+
+
+
+  }
+  </style>
+  <body>
+     <body bgcolor="#000000">
+
+       <div class="x1">
+
+         <img src="images/x1.png" alt="x" id="ShowPopUp1" class="x1"/>
+       </div>
+       <!-- <h1>X</h1> -->
+
+   <div id="typewriter"></div>
+
+
+
+
+
+      <script>
+      var str = "<p>Постой. Одумайся. Ты точно хочешь сюда заглянуть?</p>",
+    i = 0,
+    isTag,
+    text;
+
+(function type() {
+    text = str.slice(0, ++i);
+    if (text === str) return;
+
+    document.getElementById('typewriter').innerHTML = text;
+
+    var char = text.slice(-1);
+    if( char === '<' ) isTag = true;
+    if( char === '>' ) isTag = false;
+
+    if (isTag) return type();
+    setTimeout(type, 160);
+}());
+
+  // document.getElementById("typewriter").style.fontFamily = "fe blud"
+      </script>
+
+    </script>
+
+    <script>
+
+    $(function () {
+    $("#ShowPopUp1").click(function () {
+    window.open('window.html');
+    });
+    });
+    </script>
+
+  </body>
+</html>
