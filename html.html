@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    #w1 {
+      position: relative;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img class="w1" src="images/w1.png" alt="w1">
+
+
+  <script>
+    w1.onclick = function() {
+      let start = Date.now();
+
+      let timer = setInterval(function() {
+        let timePassed = Date.now() - start;
+
+        w1.style.left = timePassed / 5 + 'px';
+
+        if (timePassed > 2000) clearInterval(timer);
+
+      }, 20);
+    }
+  </script>
+
+
+</body>
+
+</html>
